@@ -1,9 +1,20 @@
 import React from 'react'
 
-const page = () => {
+const Home  = () => {
   return (
-    <div>My Home Page</div>
+    <>
+    <div>
+      <h1 style={{color:'blue', textAlign:' center',frontsize:50}}> 
+        My Home Page
+        </h1>
+        <br />
+       < input type="text"/>
+       <img src=""alt=""/>
+         </div>
+         
+         </>
+         
   )
 }
 
-export default page
+export default Home;
