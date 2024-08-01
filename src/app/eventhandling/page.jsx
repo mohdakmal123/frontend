@@ -39,7 +39,7 @@ className='mt-5 border border-black px-3 py-1 rounded w-full' type="text" />
 
 <input
 onChange={(e) => { document.body.style.backgroundColor = e.target.value;}}
-type="color" className='mt-5 block />
+type="color" className='mt-5' block />
 
 <input 
 onChange={(e) => { console.log( e.target.files);}}
@@ -49,7 +49,7 @@ onChange={(e) => { console.log( e.target.files);}}
   <input type="file" accept='image/*' on Change={previewImage} />
 
 <input type="text" className='border w-full mt-5'
-onKeyDown={(e)} => {console.log(e)} />
+onKeyDown={(e) => {console.log(e);}}/>
 
     </div>
   )
