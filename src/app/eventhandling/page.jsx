@@ -8,7 +8,7 @@ const EventHandling = () => {
 
     const reader = new FileReader();
 
-    reader.onload = (date) => {
+    reader.onLoad = (date) => {
       const img = document.createElement('img');
       img.src = data,target.result;
       document.body.appendChild(img);
@@ -25,9 +25,9 @@ const EventHandling = () => {
   
 
 <div id='circle'
-onMouseDown={(e) => {e.target.style.height = '30px'; e.target.style.width ='30px;'}}
-onMouseUP={(e) => {e.target.style.height = '46px'; e.target.style.width ='46px;'}}
- className='absolute duration-300 rounded-full size -12 border border-black'></div>
+onMouseDown={(e) => {e.target.style.height = '30px'; e.target.style.width ='30px';}}
+onMouseUP={(e) => {e.target.style.height = '46px'; e.target.style.width ='46px';}}
+ className='absolute duration-300 rounded-full size-12 border border-black'></div>
 
         <button 
         onClick={() => {alert('Button was clicked')}}
