@@ -1,5 +1,6 @@
 'use client';
-import { IconCircleCheck } from '@tabler/icons-react';
+import { IconCircleCheck, IconLoader } from '@tabler/icons-react';
+import axios from 'axios';
 import { useFormik } from 'formik';
 import React from 'react';
 import * as Yup from 'yup';
@@ -31,13 +32,25 @@ const Signup = () => {
     },
     onSubmit: (values,{ resetForm, setSubmitting}) => {
 
-setTimeout(() => {
-  console.log(values);
+//setTimeout(() => {
+  //console.log(values);
   //resetForm();
-  setSubmitting(false);
-}, 3000);
+  //setSubmitting(false);
+// }, 3000);
 
-      
+      // making a request
+      axios.post('http://localhost:5000/user/add', values)
+      .then((response) => {
+        console.log(response.status);
+        resetForm();
+        toast.success('User registered successfully')
+      }).catch((err) => {
+        console.log(err);
+        console.log(err.response?.data);
+        setSubmitting(false);
+       toast.error(err?.response?.data?.message);
+        
+      });
     },
     validationSchema: SignupSchema
   });
@@ -82,7 +95,7 @@ setTimeout(() => {
               className='flex justify-center items-center bg-blue-500 text-white px-3 py-2 rounded w-full mt-8 disabled:opacity-50'
             >
               {signupForm.isSubmitting ? <IconLoader className='animate-spin'size={20}/> : < IconCircleCheck/>}
-              <span>{signupForm.isSubmitting ? 'Please Wait': Submit}</span>
+              <span>{signupForm.isSubmitting ? 'Please Wait': "Submit"}</span>
               </button>
 
 
