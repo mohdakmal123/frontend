@@ -61,7 +61,7 @@ const ManageUser = () => {
                                     className='px-3 py-1 bg-red-500 rounded-full text-white'>Delete</button>
                                 </td>
                                 <td>
-                                    <Link href={'/updateuser/'+user._id}className='px-3 py-1 bg-blue-500 rounded-full text-white'>Edit</Link>
+                                    <Link href={'/updateuser/'+user._id} className='px-3 py-1 bg-blue-500 rounded-full text-white'>Edit</Link>
                                 </td>
 
                             </tr>
